@@ -12,9 +12,9 @@ const path = require("path");
 const AppError = require("./utils/appError.js");
 const globalErrorHandler = require("./controller/errorController.js");
 
-const userRouter = require("./routes/userRoutes");
+const userRouter = require("./routes/userRoutes.js");
 
-const postRouter = require("./routes/postRoutes");
+const postRouter = require("./routes/postRoutes.js");
 
 const app = express();
 

@@ -22,14 +22,17 @@ const {
 
 const upload = require("../middleware/multer");
 
-// Authorization routes
+// Unprotected routes in Authorization
 userRouter.post("/signup", signup);
-userRouter.post("/verify", isAuthenticated, verifyAccount);
-userRouter.post("/resend-otp", isAuthenticated, resendOtp);
-userRouter.post("/login", isAuthenticated, login);
 userRouter.post("/logout", logout);
 userRouter.post("/forgot-password", forgotPassword);
 userRouter.post("/reset-password", resetPassword);
+
+// Protected routes in Authorization
+userRouter.post("/verify", isAuthenticated, verifyAccount);
+userRouter.post("/resend-otp", isAuthenticated, resendOtp);
+userRouter.post("/login", isAuthenticated, login);
+
 userRouter.post("/change-password", isAuthenticated, changePassword);
 
 // User Routes
